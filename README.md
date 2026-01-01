@@ -98,9 +98,7 @@ Um das Handbuch für die Veröffentlichung (Public) vorzubereiten, müssen folge
 
 ---
 
-Das ist ein hervorragendes Timing. Die von dir bereitgestellten Bilder zeigen eine saubere, strukturierte Umgebung, die perfekt für die Erstellung deines **Axiom-Master-Handbuchs** geeignet ist. Ich habe die visuelle Struktur deiner Ordner (C-Laufwerk) und deines GitHub-Repositories exakt analysiert.
-
-Hier ist die vollständige Aufarbeitung deiner Systemarchitektur für dein privates Handbuch.
+# Hier ist die vollständige Aufarbeitung deiner Systemarchitektur für dein privates Handbuch.
 
 ---
 
@@ -154,7 +152,7 @@ Fonds-CrowdFunding/ (main)
 
 ## 📄 3. Datei-Auflösung (Der Code-Kern)
 
-Hier sind die essenziellen Code-Bausteine in der korrekten Reihenfolge für dein Handbuch:
+# Hier sind die essenziellen Code-Bausteine in der korrekten Reihenfolge für dein Handbuch:
 
 ### A. Das Herzstück: `server_logic.py` (Backend)
 
@@ -237,3 +235,86 @@ Kopiere diese Strings direkt in dein README, damit du sie vom Handy per Copy-Pas
 3. **Git Update:** `cd /d C:\Fonds-CrowdFunding-main && git add . && git commit -m "Axiom Sync" && git push origin main`
 4. **IP-Check (für Tunnel):** `curl ifconfig.me`
 
+
+
+### 1. Die Master-Batch: `Axiom_Start.bat`
+
+Speichere diesen Block in deinem DB-Ordner. Er ist so programmiert, dass er alle Variablen setzt und die Fenster exakt so anordnet, wie du sie für die Entwicklung brauchst.
+
+```batch
+@echo off
+title AXIOM MASTER CONTROL
+color 0B
+
+:: PFADE - Hier wird die Basis fuer alle Strings gelegt
+set "db_path=C:\MASTER_PROJEKT_ORDNER_SICHER\MEINE_SICHERE_DB\DB_Fonds-CrowdFunding"
+set "src_path=C:\Fonds-CrowdFunding-main"
+
+echo =======================================================
+echo   SATORAMY AXIOM - VOLLSTAENDIGE HANDLUNGSFREIHEIT
+echo =======================================================
+
+:: FENSTER 1: DER KERN (Python Server)
+start "AXIOM_SERVER_CORE" cmd /k "cd /d %db_path% && set db=%db_path% && python server_logic.py"
+
+:: FENSTER 2: DIE BRUECKE (LocalTunnel)
+start "AXIOM_BRIDGE_TUNNEL" cmd /k "cd /d %db_path% && lt --port 5050 --subdomain rfof-master"
+
+:: FENSTER 3: DER WORKSPACE (Git, Watchdog, Notepad)
+start "AXIOM_WORKSPACE" cmd /k "cd /d %src_path% && set src=%src_path% && set db=%db_path% && echo Status: Workspace bereit. && git status"
+
+echo [OK] Alle Systeme gestartet. Nutze Fenster 3 fuer Entwicklung.
+exit
+
+```
+
+---
+
+### 2. Universal-Strings für 100% Effizienz
+
+Kopiere diese Liste in dein Handbuch. Jeder String ist ein "Ein-Zeiler", den du einfach in ein Terminal werfen kannst.
+
+#### **A. Navigations-Strings (Bewegungsfreiheit)**
+
+* **Ins Backend:** `cd /d %db%`
+* **Ins Frontend:** `cd /d %src%`
+* **Zu den C++ Beispielen:** `cd /d %src%\backend-examples\cpp`
+
+#### **B. Edit-Strings (Entwicklungsfreiheit)**
+
+* **Logik anpassen:** `notepad %db%\server_logic.py`
+* **UI/Bridge anpassen:** `notepad %src%\assets\js\script.js`
+* **Datenbank manuell prüfen:** `notepad %db%\data_storage.json`
+* **Log live mitlesen:** `powershell -Command "Get-Content %db%\transactions.log -Wait"`
+
+#### **C. Validierungs-Strings (Integrität)**
+
+* **Watchdog starten:** `python %db%\watchdog.py`
+* **C++ Validator kompilieren:** `g++ %src%\backend-examples\cpp\axiom_check.cpp -o axiom_check.exe`
+* **Axiom-Check ausführen:** `%src%\backend-examples\cpp\axiom_check.exe`
+
+#### **D. Cloud-Sync (Produktionsreife)**
+
+* **Alles sichern & hochladen:** `cd /d %src% && git add . && git commit -m "Axiom Evolution: Optimization Shift" && git push origin main`
+
+---
+
+### 3. Fortschritts-Logik für "Abschluss aller Runden"
+
+Damit du während der Runden effizienter wirst, hier der String, um den **Zustand manuell zu triggern** (Test-Transaction):
+
+* **Erzwungener State-Shift (1000€ Runde):**
+```cmd
+python -c "import urllib.request, json; req = urllib.request.Request('http://127.0.0.1:5050/api/sync', data=json.dumps({'admin_eur': '1000', 'admin_token': 'Satoramy_Secure_Gate_77'}).encode(), headers={'Content-Type': 'application/json'}); print(urllib.request.urlopen(req).read().decode())"
+
+```
+
+
+
+---
+
+### 📊 Visualisierung der Handlungsfreiheit
+
+### Dein Handbuch-Abschluss
+
+Mit diesen Blöcken ist dein privates README-Handbuch nun eine **vollständige Kommando-Zentrale**. Du kannst den Laptop zuklappen, dein Handy nehmen, und hast für jedes Szenario den passenden String bereit.
